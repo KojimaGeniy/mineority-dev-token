@@ -19,4 +19,8 @@ contract TokenSale is TokenBase{
         removeTokenFrom(_owner, _tokenId);
         emit Transfer(_owner, address(0), _tokenId);
     }
+
+    function putOnSale(uint256 tokenId,uint256 price) public {
+        //claim ownership to admin and 
+    }
 }

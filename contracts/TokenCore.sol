@@ -1,6 +1,7 @@
 pragma solidity ^0.4.23;
+import "./TokenSale.sol";
 
-contract TokenCore {
+contract TokenCore is TokenSale {
 
   //**Main contract with all admin stuff**//
   

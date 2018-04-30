@@ -16,7 +16,13 @@ contract TokenBase is ERC721 {
     }
 
     //---STORAGE---//
-    token[] internal allTokens;   //uint256?
+    token[] internal allTokens;  
+
+    mapping (address => uint256) internal ownedTokensCount;
+
+    mapping (address => uint256[]) internal ownedTokens;
+
+    mapping (address => mapping (address => bool)) internal operatorApprovals;
 
     //---EVENTS---//
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
@@ -76,6 +82,34 @@ contract TokenBase is ERC721 {
     function tokenByIndex(uint256 _index) public view returns (uint256) {
         require(_index < totalSupply());
         return allTokens[_index];
+    }
+
+    function setApprovalForAll(address _to, bool _approved) public {
+        require(_to != msg.sender);
+        operatorApprovals[msg.sender][_to] = _approved;
+        ApprovalForAll(msg.sender, _to, _approved);
+    }
+
+    function isApprovedForAll(address _owner, address _operator) public view returns (bool) {
+        return operatorApprovals[_owner][_operator];
+    }
+
+    function getApproved(uint256 _tokenId) public view returns (address) {
+        return tokenApprovals[_tokenId];
+    }
+
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) {
+        safeTransferFrom(_from, _to, _tokenId, "");
+    }
+
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes _data) public canTransfer(_tokenId) {
+        transferFrom(_from, _to, _tokenId);
+        require(checkAndCallSafeTransfer(_from, _to, _tokenId, _data));
+    }
+
+    function exists(uint256 _tokenId) public view returns (bool) {
+        address owner = tokenOwner[_tokenId];
+        return owner != address(0);
     }
 
 
