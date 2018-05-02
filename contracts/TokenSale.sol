@@ -21,6 +21,6 @@ contract TokenSale is TokenBase{
     }
 
     function putOnSale(uint256 tokenId,uint256 price) public {
-        //claim ownership to admin and 
+        //claim ownership to admin and make it on sale
     }
 }
