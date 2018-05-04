@@ -17,8 +17,8 @@ contract ERC721 {
     
     //ERC721 Enumerable
     function totalSupply() public view returns (uint256 total);
-    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256 tokenId);
-    function tokenByIndex(uint256 _index) public view returns (uint256);
+    function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256 tokenId);
+    function tokenByIndex(uint256 _index) public view returns (uint,uint);
     
     //Optional extension
     function exists(uint256 _tokenId) public view returns (bool _exists);

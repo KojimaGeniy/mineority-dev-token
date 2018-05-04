@@ -6,7 +6,7 @@ contract TokenSale is TokenBase{
 
     //**Mint and burn tokens + put on sale**/
 
-    function _mint(address _to, string _tokenId) public {
+    function _mint(address _to, uint256 _tokenId) public {
         require(_to != address(0));
         addTokenTo(_to, _tokenId);
         emit Transfer(address(0), _to, _tokenId);

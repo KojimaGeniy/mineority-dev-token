@@ -1,12 +1,15 @@
 pragma solidity ^0.4.23;
 import "./ERC721.sol";
+import "./ERC721Receiver.sol";
+import "./SafeMath.sol";
+import "./AddressUtils.sol";
 
 contract TokenBase is ERC721 {
+    using SafeMath for uint256;
+    using AddressUtils for address;
 
     //**ERC721 implementation + all data structures**//
 
-    string public name;
-    string public symbol;
     enum Status {New,Active,Maintenance,Unmounted}
     enum Type {AMD, Nvidia}
 
@@ -17,6 +20,12 @@ contract TokenBase is ERC721 {
 
     //---STORAGE---//
     token[] internal allTokens;  
+
+    bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
+
+    mapping (uint256 => address) internal tokenIndexToOwner;
+
+    mapping (uint256 => address) internal tokenIndexToApproved;
 
     mapping (address => uint256) internal ownedTokensCount;
 
@@ -59,8 +68,8 @@ contract TokenBase is ERC721 {
         require(isApprovedOrOwner(msg.sender, _tokenId));
         _;
     }
-    //---ERC721 IMPLEMENTATION--//
-    function supportsInterface(bytes4 _interfaceID) external view returns (bool)
+    //---ERC721 IMPLEMENTATION---//
+    function supportsInterface(bytes4 _interfaceID) external pure returns (bool)
     {
         return ((_interfaceID == InterfaceSignature_ERC165)
             || (_interfaceID == InterfaceSignature_ERC721)
@@ -81,50 +90,8 @@ contract TokenBase is ERC721 {
     }
     //Consider it optional, test for necessarity
     function exists(uint256 _tokenId) public view returns (bool) {
-        address owner = tokenOwner[_tokenId];
+        address owner = tokenIndexToOwner[_tokenId];
         return owner != address(0);
-    }
-
-    function approve(address _to,uint256 _tokenId) public {
-        // Only an owner can grant transfer approval.
-        require(_owns(msg.sender, _tokenId));
-        // Register the approval (replacing any previous approval).
-        _approve(_tokenId, _to);
-        // Emit approval event.
-        emit Approval(msg.sender, _to, _tokenId);
-    }
-
-    function transferFrom(address _from,address _to,uint256 _tokenId) public canTransfer(_tokenId) {
-        // Check for approval and valid ownership
-        require(_approvedFor(msg.sender, _tokenId));
-        require(_owns(_from, _tokenId));
-
-        // Reassign ownership (also clears pending approvals and emits Transfer event).
-        _transfer(_from, _to, _tokenId);
-    }
-
-    function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256) {
-        require(_index < balanceOf(_owner));
-        return ownedTokens[_owner][_index];
-    }
-
-    function tokenByIndex(uint256 _index) public view returns (uint256) {
-        require(_index < totalSupply());
-        return allTokens[_index];
-    }
-
-    function setApprovalForAll(address _to, bool _approved) public {
-        require(_to != msg.sender);
-        operatorApprovals[msg.sender][_to] = _approved;
-        emit ApprovalForAll(msg.sender, _to, _approved);
-    }
-
-    function isApprovedForAll(address _owner, address _operator) public view returns (bool) {
-        return operatorApprovals[_owner][_operator];
-    }
-
-    function getApproved(uint256 _tokenId) public view returns (address) {
-        return tokenApprovals[_tokenId];
     }
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) {
@@ -136,8 +103,90 @@ contract TokenBase is ERC721 {
         require(checkAndCallSafeTransfer(_from, _to, _tokenId, _data));
     }
 
+    function transferFrom(address _from,address _to,uint256 _tokenId) public canTransfer(_tokenId) {
+        require(_from != address(0));
+        require(_to != address(0));
 
-    function tokenInfo(uint256 _tokenId) public returns (token) {
-        //return relevant token Info by ID
+        clearApproval(_from, _tokenId);
+        removeTokenFrom(_from, _tokenId);
+        addTokenTo(_to, _tokenId);
+
+        emit Transfer(_from, _to, _tokenId);
     }
+
+    function approve(address _to,uint256 _tokenId) public {
+        address owner = ownerOf(_tokenId);
+        require(_to != owner);
+        require(msg.sender == owner || isApprovedForAll(owner, msg.sender));
+
+        if (getApproved(_tokenId) != address(0) || _to != address(0)) {
+            tokenIndexToApproved[_tokenId] = _to;
+            emit Approval(owner, _to, _tokenId);
+        }
+    }
+
+    function setApprovalForAll(address _to, bool _approved) public {
+        require(_to != msg.sender);
+        operatorApprovals[msg.sender][_to] = _approved;
+        emit ApprovalForAll(msg.sender, _to, _approved);
+    }
+
+    function getApproved(uint256 _tokenId) public view returns (address) {
+        return tokenIndexToApproved[_tokenId];
+    }
+
+    function isApprovedForAll(address _owner, address _operator) public view returns (bool) {
+        return operatorApprovals[_owner][_operator];
+    }
+    //---ERC721 ENUMERATION IMPLEMENTATION---//
+    function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256) {
+        require(_index < balanceOf(_owner));
+        return ownedTokens[_owner][_index];
+    }
+
+    function tokenByIndex(uint256 _index) public view returns (uint,uint) {
+        require(_index < totalSupply());
+        return (uint(allTokens[_index].tokenStatus),uint(allTokens[_index].GPUType));
+    }
+
+    //------//
+    function addTokenTo(address _to, uint256 _tokenId) internal {
+        require(tokenIndexToOwner[_tokenId] == address(0));
+        tokenIndexToOwner[_tokenId] = _to;
+        ownedTokensCount[_to] = ownedTokensCount[_to].add(1);
+    }
+
+    function removeTokenFrom(address _from, uint256 _tokenId) internal {
+        require(ownerOf(_tokenId) == _from);
+        ownedTokensCount[_from] = ownedTokensCount[_from].sub(1);
+        tokenIndexToOwner[_tokenId] = address(0);
+    }
+
+    function clearApproval(address _owner, uint256 _tokenId) internal {
+        require(ownerOf(_tokenId) == _owner);
+        if (tokenIndexToApproved[_tokenId] != address(0)) {
+            tokenIndexToApproved[_tokenId] = address(0);
+            emit Approval(_owner, address(0), _tokenId);
+        }
+    }
+
+    function isApprovedOrOwner(address _spender, uint256 _tokenId) internal view returns (bool) {
+        address owner = ownerOf(_tokenId);
+        return _spender == owner || getApproved(_tokenId) == _spender || isApprovedForAll(owner, _spender);
+    }
+
+    function checkAndCallSafeTransfer(address _from, address _to, uint256 _tokenId, bytes _data) internal returns (bool) {
+        if (!_to.isContract()) {
+            return true;
+        }
+        bytes4 retval = ERC721Receiver(_to).onERC721Received(_from, _tokenId, _data);
+        return (retval == ERC721_RECEIVED);
+    }
+
+
+    // function tokenInfo(uint256 _tokenId) public returns (Status,Type) {
+    //     return(
+    //         allToken
+    //     )
+    // }
 }
