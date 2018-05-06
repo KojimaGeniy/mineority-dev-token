@@ -3,9 +3,9 @@ import "./TokenSale.sol";
 
 contract TokenCore is TokenSale {
 
-  //**Main contract with all admin stuff**//
+    //**Main contract with all admin stuff**//
   
-  constructor() public {
-    // constructor
-  }
+    constructor() public {
+      // constructor
+    }
 }

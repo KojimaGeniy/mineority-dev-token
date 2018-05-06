@@ -1,8 +1,8 @@
 pragma solidity ^0.4.23;
 import "./ERC721.sol";
 import "./ERC721Receiver.sol";
-import "./SafeMath.sol";
-import "./AddressUtils.sol";
+import "./utils/SafeMath.sol";
+import "./utils/AddressUtils.sol";
 
 contract TokenBase is ERC721 {
     using SafeMath for uint256;
@@ -13,13 +13,14 @@ contract TokenBase is ERC721 {
     enum Status {New,Active,Maintenance,Unmounted}
     enum Type {AMD, Nvidia}
 
-    struct token {
+    struct Token {
+        string GPUID;
         Status tokenStatus;
         Type GPUType;
     }
 
     //---STORAGE---//
-    token[] internal allTokens;  
+    Token[] internal allTokens;  
 
     bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
 
@@ -65,7 +66,7 @@ contract TokenBase is ERC721 {
 
     //---MODIFIERS---//
     modifier canTransfer(uint256 _tokenId) {
-        require(isApprovedOrOwner(msg.sender, _tokenId));
+        require(isApprovedOrOwner(msg.sender, _tokenId),"You are not authorized to transfer this token.");
         _;
     }
     //---ERC721 IMPLEMENTATION---//
@@ -88,7 +89,7 @@ contract TokenBase is ERC721 {
         owner = tokenIndexToOwner[_tokenId];
         require(owner != address(0));
     }
-    //Consider it optional, test for necessarity
+    //Consider it useless, test for necessarity
     function exists(uint256 _tokenId) public view returns (bool) {
         address owner = tokenIndexToOwner[_tokenId];
         return owner != address(0);
@@ -157,13 +158,13 @@ contract TokenBase is ERC721 {
     }
 
     function removeTokenFrom(address _from, uint256 _tokenId) internal {
-        require(ownerOf(_tokenId) == _from);
+        require(ownerOf(_tokenId) == _from,"Specified user is not token owner.");
         ownedTokensCount[_from] = ownedTokensCount[_from].sub(1);
         tokenIndexToOwner[_tokenId] = address(0);
     }
 
     function clearApproval(address _owner, uint256 _tokenId) internal {
-        require(ownerOf(_tokenId) == _owner);
+        require(ownerOf(_tokenId) == _owner,"Specified user is not token owner.");
         if (tokenIndexToApproved[_tokenId] != address(0)) {
             tokenIndexToApproved[_tokenId] = address(0);
             emit Approval(_owner, address(0), _tokenId);
@@ -186,7 +187,7 @@ contract TokenBase is ERC721 {
 
     // function tokenInfo(uint256 _tokenId) public returns (Status,Type) {
     //     return(
-    //         allToken
+    //         allToken fields here
     //     )
     // }
 }
