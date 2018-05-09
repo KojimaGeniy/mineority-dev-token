@@ -32,6 +32,7 @@ contract TokenSale is TokenBase{
         });
 
         uint256 _tokenId = allTokens.push(_token);
+        addTokenTo(msg.sender,_tokenId);
         // Just to make sure
         require(_tokenId <= 4294967295);
 

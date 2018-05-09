@@ -20,6 +20,9 @@ contract TokenBase is ERC721 {
     }
 
     //---STORAGE---//
+    string public name = "Mineority";
+    string public symbol = "MINE";
+
     Token[] internal allTokens;  
 
     bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
@@ -66,7 +69,7 @@ contract TokenBase is ERC721 {
 
     //---MODIFIERS---//
     modifier canTransfer(uint256 _tokenId) {
-        require(isApprovedOrOwner(msg.sender, _tokenId),"You are not authorized to transfer this token.");
+        require(isApprovedOrOwner(msg.sender, _tokenId));
         _;
     }
     //---ERC721 IMPLEMENTATION---//
@@ -183,11 +186,4 @@ contract TokenBase is ERC721 {
         bytes4 retval = ERC721Receiver(_to).onERC721Received(_from, _tokenId, _data);
         return (retval == ERC721_RECEIVED);
     }
-
-
-    // function tokenInfo(uint256 _tokenId) public returns (Status,Type) {
-    //     return(
-    //         allToken fields here
-    //     )
-    // }
 }

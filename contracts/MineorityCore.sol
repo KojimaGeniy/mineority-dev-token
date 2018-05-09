@@ -8,4 +8,10 @@ contract TokenCore is TokenSale {
     constructor() public {
       // constructor
     }
+
+    function() external payable {
+        require(
+          //msg.sender == address of some of our contracts
+        );
+    }
 }
