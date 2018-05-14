@@ -1,11 +1,8 @@
 pragma solidity ^0.4.23;
+import "./MineorityOwnership.sol";
 
-import "./MineorityBase.sol";
+contract MineorityTrading is MineorityOwnership {
 
-contract MineoritySale is MineorityBase{
-
-    //**Mint and burn tokens + put on sale**/
-        
     // With potential to be expanded to fit user-trading system
     struct SaleLot {
         address seller;
@@ -18,36 +15,7 @@ contract MineoritySale is MineorityBase{
     event SaleCreated(uint256 tokenId,address seller,uint256 price);
     event SaleClosed(uint256 tokenId,address seller,uint256 price);
     event SaleCancelled(uint256 tokenId);
-
-
-    //* Function to mint new token and immediately put it on sale
-    // Requires sender to be admin
-    function _mint(
-        string _GPUID,
-        uint256 _GPUType,
-        uint256 _price) public /*ownerOnly*/
-    {
-        Token memory _token = Token({
-            GPUID: _GPUID,
-            tokenStatus: Status.New,
-            GPUType: asicManufacturer(_GPUType)
-        });
-
-        uint256 _tokenId = allTokens.push(_token);
-        addTokenTo(msg.sender,_tokenId);
-        // Just to make sure
-        require(_tokenId <= 4294967295);
-
-        sellToken(_tokenId, _price);
-    }
-
-    function _burn(address _owner, uint256 _tokenId) public {
-        require(msg.sender == _owner);
-        clearApproval(_owner, _tokenId);
-        removeTokenFrom(_owner, _tokenId);
-        emit Transfer(_owner, address(0), _tokenId);
-    } 
-
+    
     // This will work for both admins and users(soon)
     function sellToken(uint256 _tokenId,uint256 _price) public {
         clearApproval(msg.sender,_tokenId);
@@ -96,14 +64,5 @@ contract MineoritySale is MineorityBase{
         return (
             lot.seller,
             lot.price );
-    }
-
-    //* Functions to withdraw ours funds from fees
-
-    //* Need another contract
-    //* Ownership of contract functions/modifiers
-    event Check(uint256 checksum);
-    function proveOwner(uint256 _checksum) public {
-        emit Check(_checksum);
     }
 }

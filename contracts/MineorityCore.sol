@@ -1,7 +1,7 @@
 pragma solidity ^0.4.23;
-import "./MineoritySale.sol";
+import "./MineorityMint.sol";
 
-contract MineorityCore is MineoritySale {
+contract MineorityCore is MineorityMint {
 
     //**Main contract with all admin stuff**//
   
@@ -23,15 +23,17 @@ contract MineorityCore is MineoritySale {
     }
 
     //* Returns all information of a given token
+    // check return datatypes to be all 256 or what
+    // same with minting
     function getToken(uint256 _tokenId) public view
         returns (
-          string GPUID,
+          uint128 asicID,
           uint256 GPUType,
           uint256 status
     ) {
         Token storage tok = allTokens[_tokenId];
 
-        GPUID = tok.GPUID;
+        asicID = tok.asicID;
         GPUType = uint256(tok.GPUType);
         status = uint256(tok.tokenStatus);
     }
