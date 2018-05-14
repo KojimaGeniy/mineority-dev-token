@@ -1,9 +1,10 @@
 pragma solidity ^0.4.23;
 
-import "./TokenBase.sol";
+import "./MineorityBase.sol";
 
-contract TokenSale is TokenBase{
+contract MineoritySale is MineorityBase{
 
+    //**Mint and burn tokens + put on sale**/
         
     // With potential to be expanded to fit user-trading system
     struct SaleLot {
@@ -18,8 +19,9 @@ contract TokenSale is TokenBase{
     event SaleClosed(uint256 tokenId,address seller,uint256 price);
     event SaleCancelled(uint256 tokenId);
 
-    //**Mint and burn tokens + put on sale**/
 
+    //* Function to mint new token and immediately put it on sale
+    // Requires sender to be admin
     function _mint(
         string _GPUID,
         uint256 _GPUType,
@@ -28,7 +30,7 @@ contract TokenSale is TokenBase{
         Token memory _token = Token({
             GPUID: _GPUID,
             tokenStatus: Status.New,
-            GPUType: Type(_GPUType)
+            GPUType: asicManufacturer(_GPUType)
         });
 
         uint256 _tokenId = allTokens.push(_token);
@@ -97,4 +99,11 @@ contract TokenSale is TokenBase{
     }
 
     //* Functions to withdraw ours funds from fees
+
+    //* Need another contract
+    //* Ownership of contract functions/modifiers
+    event Check(uint256 checksum);
+    function proveOwner(uint256 _checksum) public {
+        emit Check(_checksum);
+    }
 }
