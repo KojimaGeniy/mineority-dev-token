@@ -127,11 +127,11 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x60806040526000600260146101000a81548160ff02191690831515021790555034801561002b57600080fd5b506108308061003b6000396000f3006080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630519ce79146100a95780630a0f8168146101005780631f5136601461015757806327d7874c146101ae5780633f4ba83a146101f15780634e0a3379146102085780635c975abb1461024b5780635fd8c7101461027a5780638456cb5914610291578063fe1439b4146102a8575b600080fd5b3480156100b557600080fd5b506100be6102eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010c57600080fd5b50610115610311565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016357600080fd5b5061016c610336565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101ba57600080fd5b506101ef600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061035c565b005b3480156101fd57600080fd5b50610206610436565b005b34801561021457600080fd5b50610249600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104c9565b005b34801561025757600080fd5b506102606105a4565b604051808215151515815260200191505060405180910390f35b34801561028657600080fd5b5061028f6105b7565b005b34801561029d57600080fd5b506102a6610695565b005b3480156102b457600080fd5b506102e9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610729565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156103f357600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561049157600080fd5b600260149054906101000a900460ff1615156104ac57600080fd5b6000600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561052457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561056057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600260149054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561061357600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610692573d6000803e3d6000fd5b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106f057600080fd5b600260149054906101000a900460ff1615151561070c57600080fd5b6001600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561078457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156107c057600080fd5b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058207ceee8fff3d41eca6a96237a78b2c64ef18f1898beb308e46c14ab17f01927cc0029",
-  "deployedBytecode": "0x6080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630519ce79146100a95780630a0f8168146101005780631f5136601461015757806327d7874c146101ae5780633f4ba83a146101f15780634e0a3379146102085780635c975abb1461024b5780635fd8c7101461027a5780638456cb5914610291578063fe1439b4146102a8575b600080fd5b3480156100b557600080fd5b506100be6102eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010c57600080fd5b50610115610311565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016357600080fd5b5061016c610336565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101ba57600080fd5b506101ef600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061035c565b005b3480156101fd57600080fd5b50610206610436565b005b34801561021457600080fd5b50610249600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104c9565b005b34801561025757600080fd5b506102606105a4565b604051808215151515815260200191505060405180910390f35b34801561028657600080fd5b5061028f6105b7565b005b34801561029d57600080fd5b506102a6610695565b005b3480156102b457600080fd5b506102e9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610729565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156103f357600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561049157600080fd5b600260149054906101000a900460ff1615156104ac57600080fd5b6000600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561052457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561056057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600260149054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561061357600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610692573d6000803e3d6000fd5b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106f057600080fd5b600260149054906101000a900460ff1615151561070c57600080fd5b6001600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561078457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156107c057600080fd5b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a723058207ceee8fff3d41eca6a96237a78b2c64ef18f1898beb308e46c14ab17f01927cc0029",
+  "bytecode": "0x60806040526000600260146101000a81548160ff02191690831515021790555034801561002b57600080fd5b506108308061003b6000396000f3006080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630519ce79146100a95780630a0f8168146101005780631f5136601461015757806327d7874c146101ae5780633f4ba83a146101f15780634e0a3379146102085780635c975abb1461024b5780635fd8c7101461027a5780638456cb5914610291578063fe1439b4146102a8575b600080fd5b3480156100b557600080fd5b506100be6102eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010c57600080fd5b50610115610311565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016357600080fd5b5061016c610336565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101ba57600080fd5b506101ef600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061035c565b005b3480156101fd57600080fd5b50610206610436565b005b34801561021457600080fd5b50610249600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104c9565b005b34801561025757600080fd5b506102606105a4565b604051808215151515815260200191505060405180910390f35b34801561028657600080fd5b5061028f6105b7565b005b34801561029d57600080fd5b506102a6610695565b005b3480156102b457600080fd5b506102e9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610729565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156103f357600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561049157600080fd5b600260149054906101000a900460ff1615156104ac57600080fd5b6000600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561052457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561056057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600260149054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561061357600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610692573d6000803e3d6000fd5b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106f057600080fd5b600260149054906101000a900460ff1615151561070c57600080fd5b6001600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561078457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156107c057600080fd5b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582032778db523aff8ef7d51447f6861c603f2d61b7949c7949050aef948936ed9240029",
+  "deployedBytecode": "0x6080604052600436106100a4576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630519ce79146100a95780630a0f8168146101005780631f5136601461015757806327d7874c146101ae5780633f4ba83a146101f15780634e0a3379146102085780635c975abb1461024b5780635fd8c7101461027a5780638456cb5914610291578063fe1439b4146102a8575b600080fd5b3480156100b557600080fd5b506100be6102eb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561010c57600080fd5b50610115610311565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016357600080fd5b5061016c610336565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156101ba57600080fd5b506101ef600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061035c565b005b3480156101fd57600080fd5b50610206610436565b005b34801561021457600080fd5b50610249600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104c9565b005b34801561025757600080fd5b506102606105a4565b604051808215151515815260200191505060405180910390f35b34801561028657600080fd5b5061028f6105b7565b005b34801561029d57600080fd5b506102a6610695565b005b3480156102b457600080fd5b506102e9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610729565b005b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156103b757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156103f357600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561049157600080fd5b600260149054906101000a900460ff1615156104ac57600080fd5b6000600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561052457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561056057600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600260149054906101000a900460ff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561061357600080fd5b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc3073ffffffffffffffffffffffffffffffffffffffff16319081150290604051600060405180830381858888f19350505050158015610692573d6000803e3d6000fd5b50565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156106f057600080fd5b600260149054906101000a900460ff1615151561070c57600080fd5b6001600260146101000a81548160ff021916908315150217905550565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561078457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156107c057600080fd5b80600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a7230582032778db523aff8ef7d51447f6861c603f2d61b7949c7949050aef948936ed9240029",
   "sourceMap": "26:2495:2:-;;;315:5;294:26;;;;;;;;;;;;;;;;;;;;26:2495;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:2495:2;;;;;;;",
   "deployedSourceMap": "26:2495:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;131:25:2;;;;;;;;;;;;;;;;;;;;;;;;;;;100;;8:9:-1;5:2;;;30:1;27;20:12;5:2;100:25:2;;;;;;;;;;;;;;;;;;;;;;;;;;;162;;8:9:-1;5:2;;;30:1;27;20:12;5:2;162:25:2;;;;;;;;;;;;;;;;;;;;;;;;;;;1209:126;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1209:126:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;2392;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2392:126:2;;;;;;1480;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1480:126:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;294:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;294:26:2;;;;;;;;;;;;;;;;;;;;;;;;;;;1883:94;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1883:94:2;;;;;;2131:76;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2131:76:2;;;;;;1751:126;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1751:126:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:25;;;;;;;;;;;;;:::o;100:::-;;;;;;;;;;;;;:::o;162:::-;;;;;;;;;;;;;:::o;1209:126::-;459:10;;;;;;;;;;;445:24;;:10;:24;;;437:33;;;;;;;;1294:1;1275:21;;:7;:21;;;;1267:30;;;;;;;;1321:7;1308:10;;:20;;;;;;;;;;;;;;;;;;1209:126;:::o;2392:::-;459:10;;;;;;;;;;;445:24;;:10;:24;;;437:33;;;;;;;;1039:6;;;;;;;;;;;1031:15;;;;;;;;2506:5;2497:6;;:14;;;;;;;;;;;;;;;;;;2392:126::o;1480:::-;459:10;;;;;;;;;;;445:24;;:10;:24;;;437:33;;;;;;;;1565:1;1546:21;;:7;:21;;;;1538:30;;;;;;;;1592:7;1579:10;;:20;;;;;;;;;;;;;;;;;;1480:126;:::o;294:26::-;;;;;;;;;;;;;:::o;1883:94::-;601:10;;;;;;;;;;;587:24;;:10;:24;;;579:33;;;;;;;;1937:10;;;;;;;;;;;:19;;:33;1957:4;:12;;;1937:33;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1937:33:2;1883:94::o;2131:76::-;459:10;;;;;;;;;;;445:24;;:10;:24;;;437:33;;;;;;;;898:6;;;;;;;;;;;897:7;889:16;;;;;;;;2196:4;2187:6;;:13;;;;;;;;;;;;;;;;;;2131:76::o;1751:126::-;459:10;;;;;;;;;;;445:24;;:10;:24;;;437:33;;;;;;;;1836:1;1817:21;;:7;:21;;;;1809:30;;;;;;;;1863:7;1850:10;;:20;;;;;;;;;;;;;;;;;;1751:126;:::o",
-  "source": "pragma solidity ^0.4.23;\n\ncontract MineorityAccessControl {\n\n    //**Access controls levels**//\n    address public ceoAddress;\n    address public cfoAddress;\n    address public ctoAddress;\n\n    // @dev Keeps track whether the contract is paused. When that is true, most actions are blocked\n    bool public paused = false;\n\n    //---MODIFIERS---//\n\n    /// @dev Access modifier for CEO-only functionality\n    modifier onlyCEO() {\n        require(msg.sender == ceoAddress);\n        _;\n    }\n\n    /// @dev Access modifier for CFO-only functionality\n    modifier onlyCFO() {\n        require(msg.sender == cfoAddress);\n        _;\n    }\n\n    /// @dev Access modifier for CTO-only functionality\n    modifier onlyCtO() {\n        require(msg.sender == ctoAddress);\n        _;\n    }\n\n    /// @dev Modifier to allow actions only when the contract IS NOT paused\n    modifier whenNotPaused() {\n        require(!paused);\n        _;\n    }\n\n    /// @dev Modifier to allow actions only when the contract IS paused\n    modifier whenPaused {\n        require(paused);\n        _;\n    }\n\n    /// @dev Assigns a new address to act as the CEO. Only available to the current CEO.\n    /// @param _newCEO The address of the new CEO\n    function setCEO(address _newCEO) public onlyCEO {\n        require(_newCEO != address(0));\n\n        ceoAddress = _newCEO;\n    }\n\n    /// @dev Assigns a new address to act as the CFO. Only available to the current CEO.\n    /// @param _newCFO The address of the new CFO\n    function setCFO(address _newCFO) public onlyCEO {\n        require(_newCFO != address(0));\n\n        cfoAddress = _newCFO;\n    }\n\n    /// @dev Assigns a new address to act as the CTO. Only available to the current CEO.\n    /// @param _newCTO The address of the new CTO\n    function setCTO(address _newCTO) public onlyCEO {\n        require(_newCTO != address(0));\n\n        ctoAddress = _newCTO;\n    }\n\n    function withdrawBalance() external onlyCFO {\n        cfoAddress.transfer(this.balance);\n    }\n\n\n    /// @dev Called by any \"C-level\" role to pause the contract. Used only when\n    ///  a bug or exploit is detected and we need to limit damage.\n    function pause() public onlyCEO whenNotPaused {\n        paused = true;\n    }\n\n    /// @dev Unpauses the smart contract. Can only be called by the CEO, since\n    ///  one reason we may pause the contract is when CFO or CTO accounts are\n    ///  compromised.\n    function unpause() public onlyCEO whenPaused {\n        // can't unpause if contract was upgraded\n        paused = false;\n    }\n\n}\n",
+  "source": "pragma solidity ^0.4.23;\n\ncontract MineorityAccessControl {\n\n    //**Access controls levels**//\n    address public ceoAddress;\n    address public cfoAddress;\n    address public ctoAddress;\n\n    // @dev Keeps track whether the contract is paused. When that is true, most actions are blocked\n    bool public paused = false;\n\n    //---MODIFIERS---//\n\n    /// @dev Access modifier for CEO-only functionality\n    modifier onlyCEO() {\n        require(msg.sender == ceoAddress);\n        _;\n    }\n\n    /// @dev Access modifier for CFO-only functionality\n    modifier onlyCFO() {\n        require(msg.sender == cfoAddress);\n        _;\n    }\n\n    /// @dev Access modifier for CTO-only functionality\n    modifier onlyCTO() {\n        require(msg.sender == ctoAddress);\n        _;\n    }\n\n    /// @dev Modifier to allow actions only when the contract IS NOT paused\n    modifier whenNotPaused() {\n        require(!paused);\n        _;\n    }\n\n    /// @dev Modifier to allow actions only when the contract IS paused\n    modifier whenPaused {\n        require(paused);\n        _;\n    }\n\n    /// @dev Assigns a new address to act as the CEO. Only available to the current CEO.\n    /// @param _newCEO The address of the new CEO\n    function setCEO(address _newCEO) public onlyCEO {\n        require(_newCEO != address(0));\n\n        ceoAddress = _newCEO;\n    }\n\n    /// @dev Assigns a new address to act as the CFO. Only available to the current CEO.\n    /// @param _newCFO The address of the new CFO\n    function setCFO(address _newCFO) public onlyCEO {\n        require(_newCFO != address(0));\n\n        cfoAddress = _newCFO;\n    }\n\n    /// @dev Assigns a new address to act as the CTO. Only available to the current CEO.\n    /// @param _newCTO The address of the new CTO\n    function setCTO(address _newCTO) public onlyCEO {\n        require(_newCTO != address(0));\n\n        ctoAddress = _newCTO;\n    }\n\n    function withdrawBalance() external onlyCFO {\n        cfoAddress.transfer(this.balance);\n    }\n\n\n    /// @dev Called by any \"C-level\" role to pause the contract. Used only when\n    ///  a bug or exploit is detected and we need to limit damage.\n    function pause() public onlyCEO whenNotPaused {\n        paused = true;\n    }\n\n    /// @dev Unpauses the smart contract. Can only be called by the CEO, since\n    ///  one reason we may pause the contract is when CFO or CTO accounts are\n    ///  compromised.\n    function unpause() public onlyCEO whenPaused {\n        // can't unpause if contract was upgraded\n        paused = false;\n    }\n\n}\n",
   "sourcePath": "/home/andrew/Projects/truffleTest/wemine/contracts/MineorityAccessControl.sol",
   "ast": {
     "attributes": {
@@ -340,10 +340,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -384,7 +384,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1441,
+                                      "referencedDeclaration": 1504,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -487,10 +487,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -531,7 +531,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1441,
+                                      "referencedDeclaration": 1504,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -591,7 +591,7 @@
           {
             "attributes": {
               "documentation": "@dev Access modifier for CTO-only functionality",
-              "name": "onlyCtO",
+              "name": "onlyCTO",
               "visibility": "internal"
             },
             "children": [
@@ -634,10 +634,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -678,7 +678,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1441,
+                                      "referencedDeclaration": 1504,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -781,10 +781,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -894,10 +894,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1054,10 +1054,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1336,10 +1336,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1618,10 +1618,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1444,
-                                1445
+                                1507,
+                                1508
                               ],
-                              "referencedDeclaration": 1444,
+                              "referencedDeclaration": 1507,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1923,7 +1923,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1458,
+                                  "referencedDeclaration": 1521,
                                   "type": "contract MineorityAccessControl",
                                   "value": "this"
                                 },
@@ -2272,5 +2272,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-14T18:40:02.800Z"
+  "updatedAt": "2018-05-15T19:57:47.784Z"
 }

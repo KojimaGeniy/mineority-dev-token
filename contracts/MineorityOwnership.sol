@@ -47,12 +47,12 @@ contract MineorityOwnership is MineorityBase,ERC721 {
     //* Safe transfer tokens from address to address, includes check if
     // receiving address is an applicable to recieve tokens contract or 
     // a regular address
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) {
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) whenNotPaused {
         safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     //* Same as above, but can transfer some bytes of data with tokens
-    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes _data) public canTransfer(_tokenId) {
+    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes _data) public canTransfer(_tokenId) whenNotPaused {
         transferFrom(_from, _to, _tokenId);
         require(checkAndCallSafeTransfer(_from, _to, _tokenId, _data));
     }
@@ -61,7 +61,7 @@ contract MineorityOwnership is MineorityBase,ERC721 {
     // Requires the msg sender to be the owner, approved, or operator,
     // and given token to be owned by given address 
     // Usage of this method is discouraged, use `safeTransferFrom` whenever possible
-    function transferFrom(address _from,address _to,uint256 _tokenId) public canTransfer(_tokenId) {
+    function transferFrom(address _from,address _to,uint256 _tokenId) public canTransfer(_tokenId) whenNotPaused {
         require(_from != address(0));
         require(_to != address(0));
 
@@ -76,7 +76,7 @@ contract MineorityOwnership is MineorityBase,ERC721 {
     // The zero address indicates there is no approved address.
     // There can only be one approved address per token at a given time.
     // Requires the msg sender to be the owner or operator
-    function approve(address _to,uint256 _tokenId) public {
+    function approve(address _to,uint256 _tokenId) public whenNotPaused {
         address owner = ownerOf(_tokenId);
         require(_to != owner);
         require(msg.sender == owner || isApprovedForAll(owner, msg.sender));
@@ -90,7 +90,7 @@ contract MineorityOwnership is MineorityBase,ERC721 {
     //* Function to set or unset operator to a specific address for all
     // its possessions
     // An operator is allowed to transfer all tokens of the sender
-    function setApprovalForAll(address _to, bool _approved) public {
+    function setApprovalForAll(address _to, bool _approved) public whenNotPaused {
         require(_to != msg.sender);
         operatorApprovals[msg.sender][_to] = _approved;
         emit ApprovalForAll(msg.sender, _to, _approved);
@@ -117,7 +117,7 @@ contract MineorityOwnership is MineorityBase,ERC721 {
     // Consider it deprecated and just for interface sake
     function tokenByIndex(uint256 _index) public view returns (uint,uint) {
         require(_index < totalSupply());
-        return (uint(allTokens[_index].tokenStatus),uint(allTokens[_index].GPUType));
+        return (uint(allTokens[_index].asicID),uint(allTokens[_index].GPUType));
     }
 
     //------//

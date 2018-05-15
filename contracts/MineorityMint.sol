@@ -8,13 +8,24 @@ contract MineorityMint is MineorityTrading{
     //* Function to mint new token and immediately put it on sale
     // Requires sender to be admin
     function _mint(
-        uint128 _asicID,
+        uint256 _asicID,
+        uint256 _pciVendorID,
+        uint256 _pciDeviceID,
+        uint256 _pciSubDeviceID,
+        uint256 _pciSubVendorID,
+        uint256 _memSizeMB,
+        string _memInfo,
         uint256 _GPUType,
-        uint256 _price) public /*ownerOnly*/
+        uint256 _price) public onlyCTO
     {
         Token memory _token = Token({
-            asicID: _asicID,
-            tokenStatus: Status.New,
+            asicID: uint128(_asicID),
+            pciVendorID: uint16(_pciVendorID),
+            pciDeviceID: uint16(_pciDeviceID),
+            pciSubDeviceID: uint16(_pciSubDeviceID),
+            pciSubVendorID: uint16(_pciSubVendorID),
+            memSizeMB: uint16(_memSizeMB),
+            memInfo: _memInfo,
             GPUType: asicManufacturer(_GPUType)
         });
 
@@ -26,7 +37,7 @@ contract MineorityMint is MineorityTrading{
         sellToken(_tokenId, _price);
     }
 
-    function _burn(address _owner, uint256 _tokenId) public {
+    function _burn(address _owner, uint256 _tokenId) public onlyCTO {
         require(msg.sender == _owner);
         clearApproval(_owner, _tokenId);
         removeTokenFrom(_owner, _tokenId);

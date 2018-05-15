@@ -9,27 +9,24 @@ contract MineorityBase is MineorityAccessControl {
     using AddressUtils for address;
 
     //**ERC721 implementation + all data structures**//
-
-    enum Status {New,Active,Maintenance,Unmounted}
     enum asicManufacturer {AMD, NVIDIA, Intel}
 
     struct Token {
+        //The memory type of a GPU card - in this case, the part number. Always 11 characters in length.
+        string memInfo;
         //The unique ASIC Serial ID of a GPU card. It is stored as a binary value.
         uint128 asicID;
-        // //The unique PCI Vendor ID of a GPU card. It is stored as a binary value.
-        // uint16 pciVendorID;
-        // //The unique PCI Device ID of a GPU card. It is stored as a binary value.
-        // uint16 pciDeviceID;
-        // //The model name and number of a GPU card.
-        // uint16 pciSubDeviceID;
-        // //The manufacturer of a GPU card - for instance, ASUS.
-        // uint16 pciSubVendorID;
-        // //The memory size of a GPU card - for instance, 16384 MB. Stored as a binary value.
-        // uint16 memSizeMB;
-        // //The memory type of a GPU card - in this case, the part number. Always 11 characters in length.
-        // string memInfo;
-
-        Status tokenStatus;
+        //The unique PCI Vendor ID of a GPU card. It is stored as a binary value.
+        uint16 pciVendorID;
+        //The unique PCI Device ID of a GPU card. It is stored as a binary value.
+        uint16 pciDeviceID;
+        //The model name and number of a GPU card.
+        uint16 pciSubDeviceID;
+        //The manufacturer of a GPU card - for instance, ASUS.
+        uint16 pciSubVendorID;
+        //The memory size of a GPU card - for instance, 16384 MB. Stored as a binary value.
+        uint16 memSizeMB;
+        //The manufacturer of a GPU ASIC.  This has only three possible value stores. 
         asicManufacturer GPUType;
     }
 

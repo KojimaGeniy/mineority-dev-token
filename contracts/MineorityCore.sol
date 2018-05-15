@@ -15,26 +15,29 @@ contract MineorityCore is MineorityMint {
         //);
     }
 
-    //* Switch token status from maintenance to active and opposite
-    function switchStatus(uint256 _tokenId) public /*ownerOnly*/ {
-        allTokens[_tokenId].tokenStatus == Status.Active ? 
-            allTokens[_tokenId].tokenStatus = Status.Maintenance : 
-            allTokens[_tokenId].tokenStatus = Status.Active;
-    }
-
     //* Returns all information of a given token
     // check return datatypes to be all 256 or what
     // same with minting
     function getToken(uint256 _tokenId) public view
         returns (
-          uint128 asicID,
-          uint256 GPUType,
-          uint256 status
+          uint256 asicID,
+          uint256 pciVendorID,
+          uint256 pciDeviceID,
+          uint256 pciSubDeviceID,
+          uint256 pciSubVendorID,
+          uint256 memSizeMB,
+          string memInfo,
+          uint256 GPUType
     ) {
         Token storage tok = allTokens[_tokenId];
 
-        asicID = tok.asicID;
+        asicID = uint256(tok.asicID);
+        pciVendorID = uint256(tok.pciVendorID);
+        pciDeviceID = uint256(tok.pciDeviceID);
+        pciSubDeviceID = uint256(tok.pciSubDeviceID);
+        pciSubVendorID = uint256(tok.pciSubVendorID);
+        memSizeMB = uint256(tok.memSizeMB);
+        memInfo = tok.memInfo;
         GPUType = uint256(tok.GPUType);
-        status = uint256(tok.tokenStatus);
     }
 }

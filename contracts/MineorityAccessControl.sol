@@ -25,7 +25,7 @@ contract MineorityAccessControl {
     }
 
     /// @dev Access modifier for CTO-only functionality
-    modifier onlyCtO() {
+    modifier onlyCTO() {
         require(msg.sender == ctoAddress);
         _;
     }

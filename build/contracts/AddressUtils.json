@@ -12,7 +12,7 @@
       "absolutePath": "/home/andrew/Projects/truffleTest/wemine/contracts/utils/AddressUtils.sol",
       "exportedSymbols": {
         "AddressUtils": [
-          1328
+          1391
         ]
       }
     },
@@ -26,7 +26,7 @@
             ".18"
           ]
         },
-        "id": 1311,
+        "id": 1374,
         "name": "PragmaDirective",
         "src": "0:24:8"
       },
@@ -42,10 +42,10 @@
           "documentation": "Utility library of inline functions on addresses",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            1328
+            1391
           ],
           "name": "AddressUtils",
-          "scope": 1329
+          "scope": 1392
         },
         "children": [
           {
@@ -59,7 +59,7 @@
               ],
               "name": "isContract",
               "payable": false,
-              "scope": 1328,
+              "scope": 1391,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "internal"
@@ -71,7 +71,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "addr",
-                      "scope": 1327,
+                      "scope": 1390,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -84,17 +84,17 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 1312,
+                        "id": 1375,
                         "name": "ElementaryTypeName",
                         "src": "471:7:8"
                       }
                     ],
-                    "id": 1313,
+                    "id": 1376,
                     "name": "VariableDeclaration",
                     "src": "471:12:8"
                   }
                 ],
-                "id": 1314,
+                "id": 1377,
                 "name": "ParameterList",
                 "src": "470:14:8"
               },
@@ -104,7 +104,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1327,
+                      "scope": 1390,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -117,17 +117,17 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 1315,
+                        "id": 1378,
                         "name": "ElementaryTypeName",
                         "src": "508:4:8"
                       }
                     ],
-                    "id": 1316,
+                    "id": 1379,
                     "name": "VariableDeclaration",
                     "src": "508:4:8"
                   }
                 ],
-                "id": 1317,
+                "id": 1380,
                 "name": "ParameterList",
                 "src": "507:6:8"
               },
@@ -145,7 +145,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "size",
-                          "scope": 1327,
+                          "scope": 1390,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "uint256",
@@ -158,17 +158,17 @@
                               "name": "uint256",
                               "type": "uint256"
                             },
-                            "id": 1318,
+                            "id": 1381,
                             "name": "ElementaryTypeName",
                             "src": "520:7:8"
                           }
                         ],
-                        "id": 1319,
+                        "id": 1382,
                         "name": "VariableDeclaration",
                         "src": "520:12:8"
                       }
                     ],
-                    "id": 1320,
+                    "id": 1383,
                     "name": "VariableDeclarationStatement",
                     "src": "520:12:8"
                   },
@@ -177,7 +177,7 @@
                       "externalReferences": [
                         {
                           "size": {
-                            "declaration": 1319,
+                            "declaration": 1382,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "549:4:8",
@@ -186,7 +186,7 @@
                         },
                         {
                           "addr": {
-                            "declaration": 1313,
+                            "declaration": 1376,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "569:4:8",
@@ -197,13 +197,13 @@
                       "operations": "{\n    size := extcodesize(addr)\n}"
                     },
                     "children": [],
-                    "id": 1321,
+                    "id": 1384,
                     "name": "InlineAssembly",
                     "src": "538:49:8"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 1317
+                      "functionReturnParameters": 1380
                     },
                     "children": [
                       {
@@ -227,11 +227,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 1319,
+                              "referencedDeclaration": 1382,
                               "type": "uint256",
                               "value": "size"
                             },
-                            "id": 1322,
+                            "id": 1385,
                             "name": "Identifier",
                             "src": "588:4:8"
                           },
@@ -248,37 +248,37 @@
                               "type": "int_const 0",
                               "value": "0"
                             },
-                            "id": 1323,
+                            "id": 1386,
                             "name": "Literal",
                             "src": "595:1:8"
                           }
                         ],
-                        "id": 1324,
+                        "id": 1387,
                         "name": "BinaryOperation",
                         "src": "588:8:8"
                       }
                     ],
-                    "id": 1325,
+                    "id": 1388,
                     "name": "Return",
                     "src": "581:15:8"
                   }
                 ],
-                "id": 1326,
+                "id": 1389,
                 "name": "Block",
                 "src": "514:87:8"
               }
             ],
-            "id": 1327,
+            "id": 1390,
             "name": "FunctionDefinition",
             "src": "451:150:8"
           }
         ],
-        "id": 1328,
+        "id": 1391,
         "name": "ContractDefinition",
         "src": "86:518:8"
       }
     ],
-    "id": 1329,
+    "id": 1392,
     "name": "SourceUnit",
     "src": "0:605:8"
   },
@@ -288,5 +288,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-14T18:40:02.804Z"
+  "updatedAt": "2018-05-15T19:57:47.791Z"
 }
