@@ -1,0 +1,130 @@
+{
+  "contractName": "Proxy",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820727001f3ecab42e5d5922979491018c773deeabb3431cc962f456011897b58520029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820727001f3ecab42e5d5922979491018c773deeabb3431cc962f456011897b58520029",
+  "sourceMap": "26:398:9:-;;;47:49;8:9:-1;5:2;;;30:1;27;20:12;5:2;47:49:9;26:398;;;;;;",
+  "deployedSourceMap": "26:398:9:-;;;;;",
+  "source": "pragma solidity ^0.4.23;\n\ncontract Proxy {\n    constructor() public {\n      // constructor\n    }\n\n    // So, this contract may be alone\n    // * It may have different functions one for each contract\n    // * Or it may have one fallback\n    // * One function with contractName as parameter\n\n    // For the beginning we can dispatch Core contract to be upgradable,\n    // replace it's old place with Proxy in contracts chain\n}\n",
+  "sourcePath": "/home/andrew/Projects/truffleTest/wemine/contracts/Proxy.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/andrew/Projects/truffleTest/wemine/contracts/Proxy.sol",
+      "exportedSymbols": {
+        "Proxy": [
+          1507
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".23"
+          ]
+        },
+        "id": 1502,
+        "name": "PragmaDirective",
+        "src": "0:24:9"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1507
+          ],
+          "name": "Proxy",
+          "scope": 1508
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "payable": false,
+              "scope": 1507,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1503,
+                "name": "ParameterList",
+                "src": "58:2:9"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1504,
+                "name": "ParameterList",
+                "src": "68:0:9"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1505,
+                "name": "Block",
+                "src": "68:28:9"
+              }
+            ],
+            "id": 1506,
+            "name": "FunctionDefinition",
+            "src": "47:49:9"
+          }
+        ],
+        "id": 1507,
+        "name": "ContractDefinition",
+        "src": "26:398:9"
+      }
+    ],
+    "id": 1508,
+    "name": "SourceUnit",
+    "src": "0:425:9"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.23+commit.124ca40d.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-05-21T10:59:18.517Z"
+}

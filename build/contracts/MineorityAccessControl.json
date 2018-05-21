@@ -340,10 +340,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -384,7 +384,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1504,
+                                      "referencedDeclaration": 1582,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -487,10 +487,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -531,7 +531,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1504,
+                                      "referencedDeclaration": 1582,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -634,10 +634,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -678,7 +678,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1504,
+                                      "referencedDeclaration": 1582,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -781,10 +781,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -894,10 +894,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1054,10 +1054,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1336,10 +1336,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1618,10 +1618,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1507,
-                                1508
+                                1585,
+                                1586
                               ],
-                              "referencedDeclaration": 1507,
+                              "referencedDeclaration": 1585,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1923,7 +1923,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 1521,
+                                  "referencedDeclaration": 1599,
                                   "type": "contract MineorityAccessControl",
                                   "value": "this"
                                 },
@@ -2272,5 +2272,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-15T19:57:47.784Z"
+  "updatedAt": "2018-05-21T15:39:19.269Z"
 }

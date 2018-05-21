@@ -6,7 +6,8 @@ contract MineorityCore is MineorityMint {
     //**Main contract with all admin stuff**//
   
     constructor() public {
-      // constructor
+        // the creator of the contract is the initial CEO
+        ceoAddress = msg.sender;
     }
 
     function() external payable {
@@ -39,5 +40,10 @@ contract MineorityCore is MineorityMint {
         memSizeMB = uint256(tok.memSizeMB);
         memInfo = tok.memInfo;
         GPUType = uint256(tok.GPUType);
+    }
+
+    //* For now it'll be there
+    function withdrawFunds() public /*OnlyCFO*/{
+        cfoAddress.transfer(this.balance);
     }
 }

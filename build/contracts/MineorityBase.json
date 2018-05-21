@@ -202,7 +202,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1490,
+          "SourceUnit": 1568,
           "absolutePath": "/home/andrew/Projects/truffleTest/wemine/contracts/utils/SafeMath.sol",
           "file": "./utils/SafeMath.sol",
           "scope": 422,
@@ -217,7 +217,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1392,
+          "SourceUnit": 1470,
           "absolutePath": "/home/andrew/Projects/truffleTest/wemine/contracts/utils/AddressUtils.sol",
           "file": "./utils/AddressUtils.sol",
           "scope": 422,
@@ -273,7 +273,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 1489,
+                  "referencedDeclaration": 1567,
                   "type": "library SafeMath"
                 },
                 "id": 314,
@@ -300,7 +300,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "AddressUtils",
-                  "referencedDeclaration": 1391,
+                  "referencedDeclaration": 1469,
                   "type": "library AddressUtils"
                 },
                 "id": 317,
@@ -1308,7 +1308,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "isContract",
-                                  "referencedDeclaration": 1390,
+                                  "referencedDeclaration": 1468,
                                   "type": "function (address) view returns (bool)"
                                 },
                                 "children": [
@@ -1663,5 +1663,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-15T19:57:47.785Z"
+  "updatedAt": "2018-05-21T15:39:19.269Z"
 }
