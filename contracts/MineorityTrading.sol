@@ -16,41 +16,24 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     GPUPrice Mine_31Y1 = GPUPrice({
-        GPUPrice:800,
+        GPUPrice:815,
         hostingPrice: 1200
     });
     GPUPrice Mine_31Y2 = GPUPrice({
-        GPUPrice:800,
+        GPUPrice:1030,
         hostingPrice: 1200
     });
     GPUPrice Mine_31Y3 = GPUPrice({
-        GPUPrice:800,
+        GPUPrice:1240,
         hostingPrice: 1200
     });
     
-    GPUPrice Mine_56Y1 = GPUPrice({
-        GPUPrice:800,
-        hostingPrice: 1200
-    });
     GPUPrice Mine_56Y2 = GPUPrice({
-        GPUPrice:800,
+        GPUPrice:2500,
         hostingPrice: 1200
     });
     GPUPrice Mine_56Y3 = GPUPrice({
-        GPUPrice:800,
-        hostingPrice: 1200
-    });
-    
-    GPUPrice Mine_74Y1 = GPUPrice({
-        GPUPrice:800,
-        hostingPrice: 1200
-    });
-    GPUPrice Mine_74Y2 = GPUPrice({
-        GPUPrice:800,
-        hostingPrice: 1200
-    });
-    GPUPrice Mine_74Y3 = GPUPrice({
-        GPUPrice:800,
+        GPUPrice:3050,
         hostingPrice: 1200
     });
     
@@ -106,32 +89,27 @@ contract MineorityTrading is MineorityOwnership {
         if(now < lot.creationTime + 1 years) {
             if(_GPUClass == 1) {
                 price = (Mine_31Y1.GPUPrice + Mine_31Y1.hostingPrice) / rate;
-            } else if(_GPUClass == 2) {
-                price = (Mine_56Y1.GPUPrice + Mine_56Y1.hostingPrice) / rate;
-            } else if(_GPUClass == 3) {
-                price = (Mine_74Y1.GPUPrice + Mine_74Y1.hostingPrice) / rate;
-            } 
+            }
         } else if(now < lot.creationTime + 2 years) {
             if(_GPUClass == 1) {
                 price = (Mine_31Y2.GPUPrice + Mine_31Y2.hostingPrice) / rate;
             } else if(_GPUClass == 2) {
                 price = (Mine_56Y2.GPUPrice + Mine_56Y2.hostingPrice) / rate;
-            } else if(_GPUClass == 3) {
-                price = (Mine_74Y2.GPUPrice + Mine_74Y2.hostingPrice) / rate;
-            } 
+            }
         } else if(now < lot.creationTime + 3 years) {
             if(_GPUClass == 1) {
                 price = (Mine_31Y3.GPUPrice + Mine_31Y3.hostingPrice) / rate;
             } else if(_GPUClass == 2) {
                 price = (Mine_56Y3.GPUPrice + Mine_56Y3.hostingPrice) / rate;
-            } else if(_GPUClass == 3) {
-                price = (Mine_74Y3.GPUPrice + Mine_74Y3.hostingPrice) / rate;
-            } 
+            }
         }
 
         return price;
     }
 
+    function setPrice() public /*onlyCTO*/ {
+        // take it and change
+    }
 
     function removeSaleLot(uint256 _tokenId) public whenNotPaused {
         SaleLot storage lot = tokenIndexToSaleLot[_tokenId];
