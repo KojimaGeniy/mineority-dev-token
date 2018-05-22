@@ -3,7 +3,6 @@ import "./MineorityOwnership.sol";
 
 contract MineorityTrading is MineorityOwnership {
 
-    // With potential to be expanded to fit user-trading system
     struct SaleLot {
         address seller;
         uint128 GPUClass;
@@ -15,40 +14,22 @@ contract MineorityTrading is MineorityOwnership {
         uint256 hostingPrice;
     }
 
-    GPUPrice Mine_31Y1 = GPUPrice({
-        GPUPrice:815,
-        hostingPrice: 1200
-    });
-    GPUPrice Mine_31Y2 = GPUPrice({
-        GPUPrice:1030,
-        hostingPrice: 1200
-    });
-    GPUPrice Mine_31Y3 = GPUPrice({
-        GPUPrice:1240,
-        hostingPrice: 1200
-    });
-    
-    GPUPrice Mine_56Y2 = GPUPrice({
-        GPUPrice:2500,
-        hostingPrice: 1200
-    });
-    GPUPrice Mine_56Y3 = GPUPrice({
-        GPUPrice:3050,
-        hostingPrice: 1200
-    });
-    
-
+    //---STORAGE---//
     uint128 rate; 
+    
+    mapping(uint256 => mapping(uint256 => GPUPrice)) gpuClassToYearToPrice;
 
     mapping (uint256 => SaleLot) public tokenIndexToSaleLot;
+
     mapping (uint256 => uint256) public tokenIndexToHostingPeriod;
+    
     mapping (uint256 => uint256) public tokenIndexToPurchaseDate;    
 
     event SaleCreated(uint256 tokenId,address seller,uint256 GPUClass);
     event SaleClosed(uint256 tokenId,address seller,uint256 GPUClass);
     event SaleCancelled(uint256 tokenId);
     
-    // This will work for both admins and users(soon)
+
     function sellToken(uint256 _tokenId,uint256 _GPUClass) public whenNotPaused {
         clearApproval(msg.sender,_tokenId);
         removeTokenFrom(msg.sender,_tokenId);
@@ -83,32 +64,18 @@ contract MineorityTrading is MineorityOwnership {
         emit SaleClosed(_tokenId,lot.seller,lot.GPUClass);
     }
 
-    function getPrice(uint256 _tokenId,uint256 _hostingPeriod,uint256 _GPUClass) public returns(uint256 price) {
-        SaleLot storage lot = tokenIndexToSaleLot[_tokenId];
+    function getPrice(uint256 _tokenId,uint256 _hostingPeriod,uint256 _GPUClass) public view returns(uint256 price) {
+        
+        GPUPrice storage pricing = gpuClassToYearToPrice[_GPUClass][_hostingPeriod]; 
 
-        if(now < lot.creationTime + 1 years) {
-            if(_GPUClass == 1) {
-                price = (Mine_31Y1.GPUPrice + Mine_31Y1.hostingPrice) / rate;
-            }
-        } else if(now < lot.creationTime + 2 years) {
-            if(_GPUClass == 1) {
-                price = (Mine_31Y2.GPUPrice + Mine_31Y2.hostingPrice) / rate;
-            } else if(_GPUClass == 2) {
-                price = (Mine_56Y2.GPUPrice + Mine_56Y2.hostingPrice) / rate;
-            }
-        } else if(now < lot.creationTime + 3 years) {
-            if(_GPUClass == 1) {
-                price = (Mine_31Y3.GPUPrice + Mine_31Y3.hostingPrice) / rate;
-            } else if(_GPUClass == 2) {
-                price = (Mine_56Y3.GPUPrice + Mine_56Y3.hostingPrice) / rate;
-            }
-        }
-
-        return price;
+        return pricing.GPUPrice.add(pricing.hostingPrice);
     }
 
-    function setPrice() public /*onlyCTO*/ {
-        // take it and change
+    function setPrice(uint256 _GPUClass,uint256 _hostingPeriod,uint256 _GPUPrice,uint256 _hostingPrice) public /*onlyCTO*/ {
+        gpuClassToYearToPrice[_GPUClass][_hostingPeriod] = GPUPrice({
+            GPUPrice: _GPUPrice,
+            hostingPrice: _hostingPrice
+        });
     }
 
     function removeSaleLot(uint256 _tokenId) public whenNotPaused {

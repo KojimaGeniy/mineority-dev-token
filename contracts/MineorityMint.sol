@@ -16,7 +16,7 @@ contract MineorityMint is MineorityTrading{
         uint256 _memSizeMB,
         string _memInfo,
         uint256 _GPUType,
-        uint256 _price) public /*onlyCTO*/
+        uint256 _GPUClass) public /*onlyCTO*/
     {
         Token memory _token = Token({
             asicID: uint128(_asicID),
@@ -34,7 +34,7 @@ contract MineorityMint is MineorityTrading{
         // Just to make sure
         require(_tokenId <= 4294967295);
 
-        sellToken(_tokenId, _price);
+        sellToken(_tokenId, _GPUClass);
     }
 
     function _burn(address _owner, uint256 _tokenId) public /*onlyCTO*/ {
