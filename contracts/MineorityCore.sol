@@ -8,35 +8,6 @@ contract MineorityCore is MineorityMint {
     constructor() public {
         // the creator of the contract is the initial CEO
         ceoAddress = msg.sender;
-
-        // It doesn't practically matters but for contract readability we should
-        // call it in setter after deploying once, instead of here
-        GPUPrice memory Mine_31Y1 = GPUPrice({
-            GPUPrice:815,
-            hostingPrice: 0
-        });
-        GPUPrice memory Mine_31Y2 = GPUPrice({
-            GPUPrice:1030,
-            hostingPrice: 0
-        });
-        GPUPrice memory Mine_31Y3 = GPUPrice({
-            GPUPrice:1240,
-            hostingPrice: 0
-        });
-
-        GPUPrice memory Mine_56Y2 = GPUPrice({
-            GPUPrice:2500,
-            hostingPrice: 0
-        });
-        GPUPrice memory Mine_56Y3 = GPUPrice({
-            GPUPrice:3050,
-            hostingPrice: 0
-        });
-        gpuClassToYearToPrice[1][1] = Mine_31Y1;
-        gpuClassToYearToPrice[1][2] = Mine_31Y2;
-        gpuClassToYearToPrice[1][3] = Mine_31Y3;
-        gpuClassToYearToPrice[2][2] = Mine_56Y2;
-        gpuClassToYearToPrice[2][3] = Mine_56Y3;
     }
 
     function() external payable {
