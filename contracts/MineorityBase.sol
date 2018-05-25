@@ -6,6 +6,7 @@ import "./utils/AddressUtils.sol";
 
 contract MineorityBase is MineorityAccessControl {
     using SafeMath for uint256;
+    using SafeMath for uint128;    
     using AddressUtils for address;
 
     //**ERC721 implementation + all data structures**//

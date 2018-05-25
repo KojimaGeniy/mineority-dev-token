@@ -66,11 +66,6 @@ contract MineorityAccessControl {
         ctoAddress = _newCTO;
     }
 
-    function withdrawBalance() external onlyCFO {
-        cfoAddress.transfer(this.balance);
-    }
-
-
     /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() public onlyCEO whenNotPaused {

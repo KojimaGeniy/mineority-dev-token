@@ -40,8 +40,9 @@ contract MineorityCore is MineorityMint {
         GPUType = uint256(tok.GPUType);
     }
 
-    //* For now it'll be there
-    function withdrawFunds() public /*OnlyCFO*/{
+    //* Withdraw all contract balance to CFO address
+    // Requires sender to be CFO address
+    function withdrawFunds() external onlyCFO {
         cfoAddress.transfer(this.balance);
     }
 }
