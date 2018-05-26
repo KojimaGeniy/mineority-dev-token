@@ -76,7 +76,7 @@ contract MineorityTrading is MineorityOwnership {
         require(lot.seller != address(0));
         uint256 price = getPrice(_hostingPeriod,lot.GPUClass);
 
-        require(msg.value >= price);
+        require(msg.value >= (price/rate) * 1000000000000000000);
 
         addTokenTo(msg.sender, _tokenId);
         //2% we will leave for ourselves
@@ -92,7 +92,7 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     //* Returns price for any particular GPU with hosting price
-    function getPrice(uint256 _hostingPeriod,uint256 _GPUClass) public view returns(uint256 price) {
+    function getPrice(uint256 _GPUClass,uint256 _hostingPeriod) public view returns(uint256 price) {
         
         GPUPrice storage pricing = gpuClassToYearToPrice[_GPUClass][_hostingPeriod]; 
 
@@ -105,6 +105,10 @@ contract MineorityTrading is MineorityOwnership {
             GPUPrice: uint128(_GPUPrice),
             hostingPrice: uint128(_hostingPrice)
         });
+    }
+
+    function setRate(uint256 _newRate) public onlyCTO {
+        rate = uint128(_newRate);
     }
 
     //* Removes token from sale, requires sender to be seller

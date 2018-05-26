@@ -113,13 +113,6 @@ contract MineorityOwnership is MineorityBase,ERC721 {
         return ownedTokens[_owner][_index];
     }
 
-    //* Return token index by token index
-    // Consider it deprecated and just for interface sake
-    function tokenByIndex(uint256 _index) public view returns (uint,uint) {
-        require(_index < totalSupply());
-        return (uint(allTokens[_index].asicID),uint(allTokens[_index].GPUType));
-    }
-
     //------//
     //* Internal function to add token to specific address possession
     // Requires token to not be owned by any address 
