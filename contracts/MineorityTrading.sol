@@ -15,7 +15,7 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     //---STORAGE---//
-    uint128 rate; 
+    uint128 public rate; 
     
     mapping (uint256 => mapping(uint256 => GPUPrice)) internal gpuClassToYearToPrice;
 
@@ -72,10 +72,13 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     function buyToken(uint256 _tokenId,uint256 _hostingPeriod) public payable whenNotPaused {
-        SaleLot storage lot = tokenIndexToSaleLot[_tokenId];
-        require(lot.seller != address(0));
-        uint256 price = getPrice(_hostingPeriod,lot.GPUClass);
+        SaleLot storage lot = tokenIndexToSaleLot[_tokenId];        
+        
+        require(tokenIndexToSaleLot[_tokenId].seller != address(0));
+        uint256 price = getPrice(tokenIndexToSaleLot[_tokenId].GPUClass,_hostingPeriod);
 
+        price = price.mul(1 ether)/rate;
+        require(price != 0);
         require(msg.value >= price);
 
         addTokenTo(msg.sender, _tokenId);
@@ -92,11 +95,13 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     //* Returns price for any particular GPU with hosting price
-    function getPrice(uint256 _hostingPeriod,uint256 _GPUClass) public view returns(uint256 price) {
+    function getPrice(uint256 _GPUClass,uint256 _hostingPeriod) public view returns(uint256 price) {
         
-        GPUPrice storage pricing = gpuClassToYearToPrice[_GPUClass][_hostingPeriod]; 
-
-        return pricing.GPUPrice.add(pricing.hostingPrice);
+        uint128 gpuPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].GPUPrice; 
+        uint128 hostPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].hostingPrice;
+        
+        uint256 priceT = uint256(gpuPrice.add(hostPrice));
+        return priceT;
     }
 
     //* Setter for price of every available GPU, only for CTO
@@ -106,6 +111,10 @@ contract MineorityTrading is MineorityOwnership {
             hostingPrice: uint128(_hostingPrice)
         });
     }
+
+    function setRate(uint256 _newRate) public onlyCTO {
+        rate = uint128(_newRate);
+    } 
 
     //* Removes token from sale, requires sender to be seller
     function removeSaleLot(uint256 _tokenId) public whenNotPaused {
