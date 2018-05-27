@@ -1,7 +1,7 @@
 var Mineority = artifacts.require("./MineorityCore.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Mineority).then(() => {
+  deployer.deploy(Mineority,{gas: 7612388 }).then(() => {
     Mineority.deployed().then((instance) => {
       instance.setPrice(1,1,815,0,{ from: web3.eth.accounts[0] });
       instance.setPrice(1,2,1030,0,{ from: web3.eth.accounts[0] });

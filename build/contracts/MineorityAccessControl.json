@@ -331,10 +331,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -375,7 +375,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1530,
+                                      "referencedDeclaration": 1761,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -478,10 +478,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -522,7 +522,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1530,
+                                      "referencedDeclaration": 1761,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -625,10 +625,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -669,7 +669,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 1530,
+                                      "referencedDeclaration": 1761,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -772,10 +772,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -885,10 +885,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1045,10 +1045,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1327,10 +1327,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1609,10 +1609,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1533,
-                                1534
+                                1764,
+                                1765
                               ],
-                              "referencedDeclaration": 1533,
+                              "referencedDeclaration": 1764,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -2097,5 +2097,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-25T12:28:27.057Z"
+  "updatedAt": "2018-05-26T23:34:59.400Z"
 }

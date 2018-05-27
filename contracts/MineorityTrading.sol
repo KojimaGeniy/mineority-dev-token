@@ -15,7 +15,7 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     //---STORAGE---//
-    uint128 rate; 
+    uint128 public rate; 
     
     mapping (uint256 => mapping(uint256 => GPUPrice)) internal gpuClassToYearToPrice;
 
@@ -51,10 +51,11 @@ contract MineorityTrading is MineorityOwnership {
         // id = allTokens.length might solve one problem, look in tulips
         for(uint16 i = 0;i < _tokenIds.length;i++) {
             SaleLot storage lot = tokenIndexToSaleLot[_tokenIds[i]];
-
+            require(lot.seller != address(0));
             uint256 price = getPrice(_hostingPeriods[i],lot.GPUClass);
-
-            require(msg.value >= price);
+            
+            require(price != 0);
+            require(msg.value >= price.mul(1000000000000000000)/rate));
             
             addTokenTo(msg.sender, _tokenIds[i]);
 
@@ -74,9 +75,10 @@ contract MineorityTrading is MineorityOwnership {
     function buyToken(uint256 _tokenId,uint256 _hostingPeriod) public payable whenNotPaused {
         SaleLot storage lot = tokenIndexToSaleLot[_tokenId];
         require(lot.seller != address(0));
-        uint256 price = getPrice(_hostingPeriod,lot.GPUClass);
+        uint256 price = getPrice(lot.GPUClass,_hostingPeriod);
 
-        require(msg.value >= (price/rate) * 1000000000000000000);
+        require(price != 0);
+        require(msg.value >= (price.mul(1000000000000000000)/rate));
 
         addTokenTo(msg.sender, _tokenId);
         //2% we will leave for ourselves

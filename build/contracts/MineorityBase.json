@@ -193,7 +193,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1516,
+          "SourceUnit": 1747,
           "absolutePath": "/home/andrew/Projects/truffleTest/wemine/contracts/utils/SafeMath.sol",
           "file": "./utils/SafeMath.sol",
           "scope": 412,
@@ -208,7 +208,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1418,
+          "SourceUnit": 1649,
           "absolutePath": "/home/andrew/Projects/truffleTest/wemine/contracts/utils/AddressUtils.sol",
           "file": "./utils/AddressUtils.sol",
           "scope": 412,
@@ -264,7 +264,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 1515,
+                  "referencedDeclaration": 1746,
                   "type": "library SafeMath"
                 },
                 "id": 301,
@@ -291,7 +291,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 1515,
+                  "referencedDeclaration": 1746,
                   "type": "library SafeMath"
                 },
                 "id": 304,
@@ -318,7 +318,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "AddressUtils",
-                  "referencedDeclaration": 1417,
+                  "referencedDeclaration": 1648,
                   "type": "library AddressUtils"
                 },
                 "id": 307,
@@ -1326,7 +1326,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "isContract",
-                                  "referencedDeclaration": 1416,
+                                  "referencedDeclaration": 1647,
                                   "type": "function (address) view returns (bool)"
                                 },
                                 "children": [
@@ -1681,5 +1681,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-05-25T12:28:27.058Z"
+  "updatedAt": "2018-05-26T23:34:59.409Z"
 }
