@@ -108,6 +108,16 @@ contract MineorityTrading is MineorityOwnership {
         return priceT;
     }
 
+    function getGPUPrice(uint256 _GPUClass,uint256 _hostingPeriod) public view returns(uint256 gpuPrice) {
+        uint128 gpuPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].GPUPrice; 
+        return gpuPrice;        
+    }
+
+    function getHostPrice(uint256 _GPUClass,uint256 _hostingPeriod) public view returns(uint256 hostPrice) {
+        uint128 hostPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].hostingPrice;
+        return hostPrice;        
+    }
+
     //* Setter for price of every available GPU, only for CTO
     function setPrice(uint256 _GPUClass,uint256 _hostingPeriod,uint256 _GPUPrice,uint256 _hostingPrice) public onlyCTO {
         gpuClassToYearToPrice[_GPUClass][_hostingPeriod] = GPUPrice({
