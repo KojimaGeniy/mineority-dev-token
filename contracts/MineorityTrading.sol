@@ -48,17 +48,21 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     function buyTokens(uint256[] _tokenIds,uint256[] _hostingPeriods) public payable whenNotPaused {
-        // id = allTokens.length might solve one problem, look in tulips
+        uint256 price = 0;
+
         for(uint16 i = 0;i < _tokenIds.length;i++) {
             SaleLot storage lot = tokenIndexToSaleLot[_tokenIds[i]];
 
-            uint256 price = getPrice(_hostingPeriods[i],lot.GPUClass);
+            require(tokenIndexToSaleLot[_tokenIds[i]].seller != address(0));
 
+            price = price.add(getPrice(tokenIndexToSaleLot[_tokenIds[i]].GPUClass,_hostingPeriods[i]).mul(1 ether)/rate);
+
+            require(getPrice(tokenIndexToSaleLot[_tokenIds[i]].GPUClass,_hostingPeriods[i]) != 0);        
             require(msg.value >= price);
             
             addTokenTo(msg.sender, _tokenIds[i]);
 
-            lot.seller.transfer((price * 98)/100);
+            //lot.seller.transfer((price * 98)/100);
 
             delete tokenIndexToSaleLot[_tokenIds[i]];
 
@@ -83,7 +87,7 @@ contract MineorityTrading is MineorityOwnership {
 
         addTokenTo(msg.sender, _tokenId);
         //2% we will leave for ourselves
-        lot.seller.transfer((price * 98)/100);
+        //lot.seller.transfer((price * 98)/100);
 
         delete tokenIndexToSaleLot[_tokenId];
 
