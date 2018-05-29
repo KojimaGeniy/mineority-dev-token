@@ -32,7 +32,7 @@ contract MineorityTrading is MineorityOwnership {
     event SaleCancelled(uint256 tokenId);
     
 
-    function sellToken(uint256 _tokenId,uint256 _GPUClass) public whenNotPaused {
+    function sellToken(uint256 _tokenId,uint256 _GPUClass) public whenNotPaused onlyCTO {
         clearApproval(msg.sender,_tokenId);
         removeTokenFrom(msg.sender,_tokenId);
 
@@ -109,12 +109,12 @@ contract MineorityTrading is MineorityOwnership {
     }
 
     function getGPUPrice(uint256 _GPUClass,uint256 _hostingPeriod) public view returns(uint256 gpuPrice) {
-        uint128 gpuPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].GPUPrice; 
+        gpuPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].GPUPrice; 
         return gpuPrice;        
     }
 
     function getHostPrice(uint256 _GPUClass,uint256 _hostingPeriod) public view returns(uint256 hostPrice) {
-        uint128 hostPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].hostingPrice;
+        hostPrice = gpuClassToYearToPrice[_GPUClass][_hostingPeriod].hostingPrice;
         return hostPrice;        
     }
 

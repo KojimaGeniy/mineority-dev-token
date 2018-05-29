@@ -1,7 +1,9 @@
 pragma solidity ^0.4.23;
 import "./MineorityTrading.sol";
+import "./utils/strings.sol";
 
 contract MineorityMint is MineorityTrading{
+    using strings for *;
 
     //**Mint and burn tokens**/
         
@@ -31,7 +33,7 @@ contract MineorityMint is MineorityTrading{
 
         uint256 _tokenId = allTokens.length;
         allTokens.push(_token); 
-        // uint256 _tokenId = allTokens.push(_token);
+
         addTokenTo(msg.sender,_tokenId);
         // Just to make sure
         require(_tokenId <= 4294967295);

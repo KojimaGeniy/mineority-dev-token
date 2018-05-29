@@ -187,7 +187,7 @@
         "id": 297,
         "nodeType": "ImportDirective",
         "scope": 412,
-        "sourceUnit": 1818,
+        "sourceUnit": 1865,
         "src": "95:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -198,7 +198,7 @@
         "id": 298,
         "nodeType": "ImportDirective",
         "scope": 412,
-        "sourceUnit": 1720,
+        "sourceUnit": 1767,
         "src": "126:34:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -245,10 +245,10 @@
               "id": 301,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1817,
+              "referencedDeclaration": 1864,
               "src": "223:8:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1817",
+                "typeIdentifier": "t_contract$_SafeMath_$1864",
                 "typeString": "library SafeMath"
               }
             },
@@ -272,10 +272,10 @@
               "id": 304,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1817,
+              "referencedDeclaration": 1864,
               "src": "255:8:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1817",
+                "typeIdentifier": "t_contract$_SafeMath_$1864",
                 "typeString": "library SafeMath"
               }
             },
@@ -299,10 +299,10 @@
               "id": 307,
               "name": "AddressUtils",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1719,
+              "referencedDeclaration": 1766,
               "src": "291:12:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AddressUtils_$1719",
+                "typeIdentifier": "t_contract$_AddressUtils_$1766",
                 "typeString": "library AddressUtils"
               }
             },
@@ -1133,7 +1133,7 @@
                         "lValueRequested": false,
                         "memberName": "isContract",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1718,
+                        "referencedDeclaration": 1765,
                         "src": "2947:14:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$bound_to$_t_address_$",
@@ -1651,7 +1651,7 @@
         "id": 297,
         "nodeType": "ImportDirective",
         "scope": 412,
-        "sourceUnit": 1818,
+        "sourceUnit": 1865,
         "src": "95:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1662,7 +1662,7 @@
         "id": 298,
         "nodeType": "ImportDirective",
         "scope": 412,
-        "sourceUnit": 1720,
+        "sourceUnit": 1767,
         "src": "126:34:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1709,10 +1709,10 @@
               "id": 301,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1817,
+              "referencedDeclaration": 1864,
               "src": "223:8:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1817",
+                "typeIdentifier": "t_contract$_SafeMath_$1864",
                 "typeString": "library SafeMath"
               }
             },
@@ -1736,10 +1736,10 @@
               "id": 304,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1817,
+              "referencedDeclaration": 1864,
               "src": "255:8:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1817",
+                "typeIdentifier": "t_contract$_SafeMath_$1864",
                 "typeString": "library SafeMath"
               }
             },
@@ -1763,10 +1763,10 @@
               "id": 307,
               "name": "AddressUtils",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1719,
+              "referencedDeclaration": 1766,
               "src": "291:12:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AddressUtils_$1719",
+                "typeIdentifier": "t_contract$_AddressUtils_$1766",
                 "typeString": "library AddressUtils"
               }
             },
@@ -2597,7 +2597,7 @@
                         "lValueRequested": false,
                         "memberName": "isContract",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1718,
+                        "referencedDeclaration": 1765,
                         "src": "2947:14:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$bound_to$_t_address_$",
@@ -3072,5 +3072,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-27T19:21:48.069Z"
+  "updatedAt": "2018-05-29T17:31:05.487Z"
 }
