@@ -26,7 +26,8 @@ contract MineorityCore is MineorityMint {
           uint256 pciSubVendorID,
           uint256 memSizeMB,
           string memInfo,
-          uint256 GPUType
+          string asicManufacturer,
+          string asicArchitecture
     ) {
         Token storage tok = allTokens[_tokenId];
 
@@ -37,7 +38,8 @@ contract MineorityCore is MineorityMint {
         pciSubVendorID = uint256(tok.pciSubVendorID);
         memSizeMB = uint256(tok.memSizeMB);
         memInfo = tok.memInfo;
-        GPUType = uint256(tok.GPUType);
+        asicManufacturer = string(tok.asicManufacturer);
+        asicArchitecture = string(tok.asicArchitecture);        
     }
 
     //* Withdraw all contract balance to CFO address

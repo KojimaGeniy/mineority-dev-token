@@ -66,7 +66,7 @@ contract MineorityTrading is MineorityOwnership {
 
             delete tokenIndexToSaleLot[_tokenIds[i]];
 
-            tokenIndexToHostingPeriod[_tokenIds[i]] = now.add(_hostingPeriods[i]);
+            tokenIndexToHostingPeriod[_tokenIds[i]] = now.add(_hostingPeriods[i].mul(1 years));
             tokenIndexToPurchaseDate[_tokenIds[i]] = now;
             tokenIndexToPurchasePrice[_tokenIds[i]] = uint128(price);
             
@@ -91,7 +91,7 @@ contract MineorityTrading is MineorityOwnership {
 
         delete tokenIndexToSaleLot[_tokenId];
 
-        tokenIndexToHostingPeriod[_tokenId] = now.add(_hostingPeriod);
+        tokenIndexToHostingPeriod[_tokenId] = now.add(_hostingPeriod.mul(1 years));
         tokenIndexToPurchaseDate[_tokenId] = now;
         tokenIndexToPurchasePrice[_tokenId] = uint128(price);
 

@@ -1,9 +1,7 @@
 pragma solidity ^0.4.23;
 import "./MineorityTrading.sol";
-import "./utils/strings.sol";
 
 contract MineorityMint is MineorityTrading{
-    using strings for *;
 
     //**Mint and burn tokens**/
         
@@ -17,7 +15,8 @@ contract MineorityMint is MineorityTrading{
         uint256 _pciSubVendorID,
         uint256 _memSizeMB,
         string _memInfo,
-        uint256 _GPUType,
+        string _asicManufacturer,
+        string _asicArchitecture,
         uint256 _GPUClass) public onlyCTO
     {
         Token memory _token = Token({
@@ -28,7 +27,8 @@ contract MineorityMint is MineorityTrading{
             pciSubVendorID: uint16(_pciSubVendorID),
             memSizeMB: uint16(_memSizeMB),
             memInfo: _memInfo,
-            GPUType: asicManufacturer(_GPUType)
+            asicManufacturer: _asicManufacturer,
+            asicArchitecture: _asicArchitecture
         });
 
         uint256 _tokenId = allTokens.length;

@@ -8,8 +8,12 @@ var mnemonic2 = "notable decide attract ritual outer panda defy salt judge grape
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
- networks: {
-development: {
+  networks: {
+    mainnet: {
+      provider: new HDWalletProvider(mnemonic2, "https://mainnet.infura.io/" + infura_apikey),
+      network_id: 1,
+    },
+    development: {
       host: "127.0.0.1",
       port: 9545,
       network_id: "8" // Match any network id
@@ -18,13 +22,13 @@ development: {
       //provider: new HDWalletProvider(mnemonic, "https://ropsten.infura.io/"+infura_apikey),
       network_id: 3
     },
-kovan: {
-      provider: new HDWalletProvider(mnemonic2, "https://kovan.infura.io/"+infura_apikey),
+    kovan: {
+      provider: new HDWalletProvider(mnemonic2, "https://kovan.infura.io/" + infura_apikey),
       network_id: 42
     },
-rinkeby: {
+    rinkeby: {
       //provider: new HDWalletProvider(mnemonic2, "https://kovan.infura.io/"+infura_apikey),
       network_id: 4
     },
-}
+  }
 };

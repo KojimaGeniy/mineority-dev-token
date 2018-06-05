@@ -117,7 +117,7 @@ contract MineorityOwnership is MineorityBase,ERC721 {
     // Consider it deprecated and just for interface sake
     function tokenByIndex(uint256 _index) public view returns (uint,uint) {
         require(_index < totalSupply());
-        return (uint(allTokens[_index].asicID),uint(allTokens[_index].GPUType));
+        return (uint(allTokens[_index].asicID),uint(allTokens[_index].pciVendorID));
     }
 
     //------//

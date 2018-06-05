@@ -1,4 +1,4 @@
-var Mineority = artifacts.require("./MineorityAccessControl.sol");
+var Mineority = artifacts.require("./MineorityCore.sol");
 
 // Not for production use
 module.exports = function(deployer) {
