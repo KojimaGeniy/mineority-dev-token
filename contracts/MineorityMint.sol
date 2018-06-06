@@ -44,9 +44,15 @@ contract MineorityMint is MineorityTrading{
     //* Burns token in case when user wants his GPU to be shipped
     // Requires sender to be owner of token
     function _burn(address _owner, uint256 _tokenId) public onlyCTO {
-        require(msg.sender == _owner);
-        clearApproval(_owner, _tokenId);
-        removeTokenFrom(_owner, _tokenId);
+        require(tokenIndexToOwner[_tokenId] == _owner);
+        if (tokenIndexToApproved[_tokenId] != address(0)) {
+            tokenIndexToApproved[_tokenId] = address(0);
+            emit Approval(_owner, address(0), _tokenId);
+        }
+        ownedTokensCount[_owner] = ownedTokensCount[_owner].sub(1);
+        tokenIndexToOwner[_tokenId] = address(0);
         emit Transfer(_owner, address(0), _tokenId);
+
+        delete allTokens[_tokenId];
     }
 }

@@ -8,3 +8,4 @@
 truffle.js
 /contracts/utils/strings.sol
 /solidity-stringutils
+/build/contracts/strings.json
